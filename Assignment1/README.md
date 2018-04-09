@@ -1,4 +1,4 @@
-# Building the Application
+ # Building the Application
 
 1. Created an instance on amazon EC2 using Ubuntu Linux
 2. Installed Pip using "sudo apt-get install python-pip"- used for managing depedencies 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Flask App</title>
+
+</head>
+<script>
+	function validate(){
+		var x = dodcuments.form["frm"]["fname"].value;
+		if(x==null || x == "")
+			alert("First Name Required Field");
+			return false;
+		var w = dodcuments.form["frm"]["fname"].value;
+		if(w.length<4)
+			alert("Minimum 4 Characters Required");
+			return false;
+		var y = dodcuments.form["frm"]["lname"].value;
+		if(y==null || y == "")
+			alert("Last Name Required Field");
+			return false;
+		var z = dodcuments.form["frm"]["lname"].value;
+		if(z.length<4)
+			alert("Minimum 4 Characters Required");
+			return false;
+	}
+</script>
+ 
+<body>
+ <div style="background-color:black; color:white; text-align:center; font-size:50px;">
+	<p>GENERATE YOUR UC 6 + 2 USERNAME</p>
+ </div>
+ <div align="center" style="background-color:red; color:white; text-align:center; font-size:30px;">
+     <form action="/send" method="get" name = "frm" onsubmit="return validate()">
+                          <label>
+                             <span>FIRST NAME :</span>
+                             <input id="fname" type="text" name="fname" placeholder="Name" />
+                           </label>
+			<br>
+			 <label>
+                             <span>LAST NAME :</span>
+                             <input id="lname" type="text" name="lname" placeholder="Name" />
+                           </label>
+			<br>
+                           <label>
+                             <span>M# NO :</span>
+                             <input id="mno" type="text" name="mno" placeholder="Roll No." />
+                           </label>
+			   <br>
+                           <label>
+                             <span>MAJOR :</span>
+                             <select name="major">
+				<option value="null" selected>Select a major</option>
+				<option value="Computer">Computer Science</option>
+				<option value="Electronics">Electronics</option>
+				<option value="Electrical">Electrical</option>
+				<option value="Mechanical">Mechanical</option>
+				</select>
+                           </label>
+			   <br>
+			    <br>
+                            <label>
+                                <input type="submit" value="Generate" /> 
+                            </label>
+         		    <br>
+                        </form>
+</div>
+<div style="background-color:black; color:white; text-align:center; font-size:30px;">
+	<p>USE YOUR 6 + 2 USERNAME TO ACCESS UC RESOURCES!</p>
+</div>
+</body>
+ 
+</html>

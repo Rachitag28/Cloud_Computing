@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+	ServerName rachitcloud2893.io
+	ServerAlias www.rachitcloud2893.io
+	WSGIScriptAlias / /var/www/flask/flask.wsgi
+	<Directory /var/www/flask>
+	Order allow,deny
+	Allow from all
+	</Directory>
+	
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/error.log combined
+
+</VirtualHost>

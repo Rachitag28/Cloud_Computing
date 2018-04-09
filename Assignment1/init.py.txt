@@ -1,0 +1,30 @@
+import flask from Flask, request, render_template
+
+app = Flask(__name__)
+@app.route("/", methods=['GET','POST'])
+def send():
+	if request.method == 'POST':
+		fname = request.form['fname']
+		lname = request.form['lname']
+		mno = request.form['mno']
+		major = request.form['major']
+		userid = ""
+		temp = 0
+		if len(lname)<6:
+			userid = lname
+			a = 8 - len(userid)
+			while temp<a:
+				userid = userid + fname[temp]
+				temp = temp +1
+		else:
+			while temp<6:
+				userid = userid + lname[temp]
+				temp = temp +1
+			b = fname[0]
+			c = fname[len(fname)-1]
+			userid = userid + b + c
+		return render_template('home.html', fname=fname, lname=lname, mno=mno, major=major, userid=userid)
+	return render_template('index.html')
+
+if__name == '__main__':
+	app.run()
